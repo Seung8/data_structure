@@ -80,7 +80,7 @@ second_dequeue = fq.dequeue()
 third_dequeue = fq.dequeue()
 
 print('first dequeue: {}, second dequeue: {}, third dequeue: {}'.format(first_dequeue, second_dequeue, third_dequeue))
-# print('final Queue items: {}, size: {}'.format(fq.queue, fq.qsize()))
+print('final Queue items: {}, size: {}'.format(fq.queue, fq.qsize()))
 
 
 # In[ ]:
