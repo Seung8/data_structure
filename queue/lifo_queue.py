@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
-
 
 import queue
 
 # LIFO 정책의 Queue 생성
-fifo = queue.Queue()
+fifo = queue.LifoQueue()
 
 # 데이터 삽입하기(Enqueue)
 fifo.put('first_enqueue')
@@ -24,10 +22,3 @@ fifo_second_dequeue = fifo.get()
 print('first dequeue: {}, second dequeue: {}, final queue size: {}'.format(
     fifo_first_dequeue, fifo_second_dequeue, fifo.qsize()
 ))
-
-
-# In[ ]:
-
-
-
-

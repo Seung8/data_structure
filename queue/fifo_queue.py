@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[17]:
-
 
 import queue
 
@@ -24,10 +22,3 @@ fifo_second_dequeue = fifo.get()
 print('first dequeue: {}, second dequeue: {}, final queue size: {}'.format(
     fifo_first_dequeue, fifo_second_dequeue, fifo.qsize()
 ))
-
-
-# In[ ]:
-
-
-
-

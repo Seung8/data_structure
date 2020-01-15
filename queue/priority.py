@@ -1,11 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[32]:
-
-
 import queue
-
 
 # 우선순위대로 싱행하는 PriorityQueue 생성
 priority = queue.PriorityQueue()
@@ -24,15 +17,10 @@ print(
 first_dequeue = priority.get()
 second_dequeue = priority.get()
 third_dequeue = priority.get()
+
 print(
-    'first dequeue: {}, second dequeue: {}, third dequeue: {}'.format(first_dequeue[1], second_dequeue[1], third_dequeue[1])
-)
+    'first dequeue: {}, second dequeue: {}, third dequeue: {}'.format(
+        first_dequeue[1], second_dequeue[1], third_dequeue[1]
+    ))
 
 print('final Queue items: {}, size: {}'.format(list(priority.queue), priority.qsize()))
-
-
-# In[ ]:
-
-
-
-
