@@ -6,7 +6,7 @@
 
 import queue
 
-# 일반적인 FIFO 정책의 Queue 생성
+# LIFO 정책의 Queue 생성
 fifo = queue.Queue()
 
 # 데이터 삽입하기(Enqueue)
