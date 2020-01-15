@@ -18,7 +18,6 @@
 ### 큐(Queue)
 
 - FIFO(First-In, First-Out): 먼저 들어온 데이터가 먼저 나감
-
 - 용어:
   - Enqueue: 데이터 넣기
   - Dequeue: 데이터 꺼내기
