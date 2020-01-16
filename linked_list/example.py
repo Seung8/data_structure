@@ -20,7 +20,7 @@ class LinkedList:
     def add(self, data):
         node = self.head
 
-        # node.next 가 None 이면 다음 노드로 이동
+        # node.next 가 None 이면 다음 노드로 이동(마지막 노드 탐색)
         while node.next:
             node = node.next
 
