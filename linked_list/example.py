@@ -3,8 +3,9 @@
 
 
 class Node:
-    def __init__(self, data, next=None):
+    def __init__(self, data, prev=None, next=None):
         self.data = data
+        self.prev = prev
         self.next = next
 
 
@@ -73,26 +74,66 @@ class LinkedList:
             node = node.next
 
 
+class DoubleLinkedList:
+    """
+    self.insert(): 링크드 리스트 맨 뒤에 순차적으로 추가
+    """
+
+    def __init__(self, data, tail=None):
+        self.head = Node(data)
+        self.tail = self.head
+
+    def insert(self, data):
+        new = Node(data)
+        # 헤드가 없는 경우
+        if not self.head:
+            self.head = new
+            self.tail = self.head
+        # 헤드는 있는 경우
+        else:
+            node = self.head
+            while node.next:
+                node = node.next
+            node.next = new
+            new.prev = node
+            self.tail = new
+
+    def desc(self):
+        node = self.head
+        while node:
+            print(node.data)
+            node = node.next
+
+
 # 테스트
 if __name__ == '__main__':
-    print('## 연결 리스트 생성')
+    print('## 링크드 리스트 생성')
     linked_list1 = LinkedList(0)
     linked_list1.desc()
 
-    print('## 헤드 제거')
+    print('\n## 헤드 제거')
     linked_list1.delete(0)
     linked_list1.desc()
 
-    print('## 0부터 9까지 노드 생성 후 출력')
+    print('\n## 0부터 9까지 노드 생성 후 출력')
     linked_list2 = LinkedList(0)
 
     for i in range(1, 10):
         linked_list2.add(i)
     linked_list2.desc()
 
-    print('## 중간 노드 4 삭제 후 출력')
+    print('\n## 중간 노드 4 삭제 후 출력')
     linked_list2.delete(4)
     linked_list2.desc()
 
-    print('## 데이터가 9인 노드 검색')
+    print('\n## 데이터가 9인 노드 검색')
     linked_list2.search(9)
+
+    print('\n## 더블 링크드 리스트 생성')
+    double_linked_list = DoubleLinkedList(0)
+    double_linked_list.desc()
+
+    for i in range(1, 10):
+        double_linked_list.insert(i)
+
+    double_linked_list.desc()
