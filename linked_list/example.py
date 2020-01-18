@@ -62,6 +62,16 @@ class LinkedList:
                 else:
                     node = node.next
 
+    def search(self, data):
+        """특정 데이터 순차 탐색"""
+        node = self.head
+
+        while node:
+            if node.data == data:
+                print('검색 결과: ', node.data)
+                break
+            node = node.next
+
 
 # 테스트
 if __name__ == '__main__':
@@ -75,6 +85,7 @@ if __name__ == '__main__':
 
     print('## 0부터 9까지 노드 생성 후 출력')
     linked_list2 = LinkedList(0)
+
     for i in range(1, 10):
         linked_list2.add(i)
     linked_list2.desc()
@@ -82,3 +93,6 @@ if __name__ == '__main__':
     print('## 중간 노드 4 삭제 후 출력')
     linked_list2.delete(4)
     linked_list2.desc()
+
+    print('## 데이터가 9인 노드 검색')
+    linked_list2.search(9)
